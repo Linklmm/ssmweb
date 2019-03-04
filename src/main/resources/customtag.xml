@@ -13,4 +13,5 @@
                         http://www.example.org/schema/user
                         http://www.example.org/schema/user.xsd">
     <myname:user id="testBean" userName="aaa" email="bbb"></myname:user>
+    <myname:student id="studentBean" studentName="gwj" className="love"></myname:student>
 </beans>

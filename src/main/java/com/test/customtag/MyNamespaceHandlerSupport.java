@@ -13,5 +13,6 @@ public class MyNamespaceHandlerSupport extends org.springframework.beans.factory
     @Override
     public void init() {
         registerBeanDefinitionParser("user",new UserBeanDefinitionParser());
+        registerBeanDefinitionParser("student",new StudentBeanDefinition());
     }
 }

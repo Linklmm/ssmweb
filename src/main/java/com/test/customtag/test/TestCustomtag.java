@@ -1,5 +1,6 @@
 package com.test.customtag.test;
 
+import com.test.customtag.pojo.Student;
 import com.test.customtag.pojo.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -18,5 +19,8 @@ public class TestCustomtag {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("customtag.xml");
         User user = (User) applicationContext.getBean("testBean");
         System.out.println(user.getUserName()+","+user.getEmail());
+
+        Student student = (Student) applicationContext.getBean("studentBean");
+        System.out.println(student.getStudentName()+","+student.getClassName());
     }
 }

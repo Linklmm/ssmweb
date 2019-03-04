@@ -10,4 +10,11 @@
             <attribute name ="email" type = "string"/>
         </complexType>
     </element>
+    <element name="student">
+        <complexType>
+            <attribute name="id" type="string"/>
+            <attribute name="studentName" type="string"/>
+            <attribute name="className" type="string"/>
+        </complexType>
+    </element>
 </schema>
