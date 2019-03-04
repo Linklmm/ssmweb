@@ -12,7 +12,7 @@ package com.test.customtag;
 public class MyNamespaceHandlerSupport extends org.springframework.beans.factory.xml.NamespaceHandlerSupport {
     @Override
     public void init() {
-        registerBeanDefinitionParser("user",new UserBeanDefinitionParser());
-        registerBeanDefinitionParser("student",new StudentBeanDefinition());
+        registerBeanDefinitionParser("user", new UserBeanDefinitionParser());
+        registerBeanDefinitionParser("student", new StudentBeanDefinition());
     }
 }

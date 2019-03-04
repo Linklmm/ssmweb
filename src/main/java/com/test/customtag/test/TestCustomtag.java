@@ -18,9 +18,9 @@ public class TestCustomtag {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("customtag.xml");
         User user = (User) applicationContext.getBean("testBean");
-        System.out.println(user.getUserName()+","+user.getEmail());
+        System.out.println(user.getUserName() + "," + user.getEmail());
 
         Student student = (Student) applicationContext.getBean("studentBean");
-        System.out.println(student.getStudentName()+","+student.getClassName());
+        System.out.println(student.getStudentName() + "," + student.getClassName());
     }
 }

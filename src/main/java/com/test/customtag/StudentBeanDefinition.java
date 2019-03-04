@@ -16,7 +16,7 @@ import org.w3c.dom.Element;
  * @Version 1.0
  * @Description 解析XSD文件中的定义和组件定义
  */
-public class StudentBeanDefinition  extends AbstractSingleBeanDefinitionParser {
+public class StudentBeanDefinition extends AbstractSingleBeanDefinitionParser {
     @Override
     protected Class<?> getBeanClass(Element element) {
         return Student.class;
@@ -27,11 +27,11 @@ public class StudentBeanDefinition  extends AbstractSingleBeanDefinitionParser {
         String studentName = element.getAttribute("studentName");
         String className = element.getAttribute("className");
 
-        if (StringUtils.hasText(studentName)){
-            builder.addPropertyValue("studentName",studentName);
+        if (StringUtils.hasText(studentName)) {
+            builder.addPropertyValue("studentName", studentName);
         }
-        if (StringUtils.hasText(className)){
-            builder.addPropertyValue("className",className);
+        if (StringUtils.hasText(className)) {
+            builder.addPropertyValue("className", className);
         }
     }
 }
