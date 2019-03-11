@@ -9,19 +9,17 @@
                         http://www.springframework.org/schema/context/spring-context-4.0.xsd
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-    <bean id="hello" class="com.test.aware.Hello"></bean>
-    <bean id="test" class="com.test.aware.TestBeanFactoryAware"></bean>
-    <bean id="message" class="com.test.distConfig.HelloMessage">
-        <property name="mes">
-            <value>${bean.message}</value>
+    <bean id="userManager" class="com.test.propertyEditorSupport.UserManager">
+        <property name="dateValue">
+            <value>2019-03-11</value>
         </property>
     </bean>
-
-    <bean id="mesHandler" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>bean.properties</value>
-            </list>
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="java.util.Date" value="com.test.propertyEditorSupport.DatePropertyEditor">
+                </entry>
+            </map>
         </property>
     </bean>
 </beans>
