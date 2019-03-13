@@ -16,7 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class TestCustomtag {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("customtag.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("customtag/customtag.xml");
         User user = (User) applicationContext.getBean("testBean");
         System.out.println(user.getUserName() + "," + user.getEmail());
 
