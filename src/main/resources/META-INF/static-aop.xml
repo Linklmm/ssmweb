@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspctj/dtd/aspectj.dtd">
+<aspectj>
+    <weaver>
+        <include within="com.test.aop.*"/>
+    </weaver>
+
+    <aspects>
+        <aspect name="com.test.aop.AspectJTest"/>
+    </aspects>
+</aspectj>

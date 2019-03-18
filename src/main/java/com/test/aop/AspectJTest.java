@@ -45,7 +45,7 @@ public class AspectJTest {
     }
 
     public static void main(String[] args) {
-        ApplicationContext bf = new ClassPathXmlApplicationContext("aop/aop.xml");
+        ApplicationContext bf = new ClassPathXmlApplicationContext("aop/static-aop.xml");
         TestBean testBean = (TestBean) bf.getBean("test");
         testBean.test();
     }
