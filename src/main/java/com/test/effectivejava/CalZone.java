@@ -12,13 +12,14 @@ package com.test.effectivejava;
 public class CalZone extends Pizza {
     private final boolean sauceInside;
 
-    public static class Builder extends Pizza.Builder<Builder>{
+    public static class Builder extends Pizza.Builder<Builder> {
         private boolean sauceInside = false;
 
-        public Builder sauceInside(){
+        public Builder sauceInside() {
             sauceInside = true;
             return this;
         }
+
         @Override
         CalZone build() {
             return new CalZone(this);
@@ -41,5 +42,7 @@ public class CalZone extends Pizza {
         CalZone calZone = new Builder().addTopping(Topping.HAM).sauceInside().build();
         System.out.println(pizza);
         System.out.println(calZone);
+        Integer max = Integer.MAX_VALUE;
+        System.out.println(max);
     }
 }
