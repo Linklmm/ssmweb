@@ -1,5 +1,9 @@
 package com.test.effectivejava;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -65,7 +69,15 @@ public class IsRomanNumeral {
 
         System.out.println(isRomanNumeral("III"));
 
+        Date date = new Date();
+        System.out.println(date);
+
+        String s ="2";
+        System.out.println(Long.valueOf(s));
+
+        List<Long> list = new ArrayList<Long>();
+        System.out.println();
 //        System.out.println(sum());
-        System.out.println(sum2());
+//        System.out.println(sum2());
     }
 }
