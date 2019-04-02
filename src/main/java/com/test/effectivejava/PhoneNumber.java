@@ -1,5 +1,8 @@
 package com.test.effectivejava;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 版权声明：Copyright(c) 2019
  *
@@ -9,18 +12,20 @@ package com.test.effectivejava;
  * @Version 1.0
  * @Description 构建equals方法的具体事例
  */
-public final class PhoneNumber {
+public final class PhoneNumber implements Comparable<PhoneNumber>{
     private final short areaCode, prefix, lineNum;
+    private int hashCode;
 
-    public PhoneNumber(short areaCode, short prefix, short lineNum) {
+    public PhoneNumber(int areaCode, int prefix, int lineNum) {
         this.areaCode = rangeCheck(areaCode, 999, "areaCode");
         this.prefix = rangeCheck(prefix, 999, "prefix");
-        this.lineNum = rangeCheck(lineNum, 999, "lineNum");
+        this.lineNum = rangeCheck(lineNum, 9999, "lineNum");
     }
 
     private static short rangeCheck(int val, int max, String arg) {
-        if (val < 0 || val > max)
+        if (val < 0 || val > max) {
             throw new IllegalArgumentException(arg + ": " + val);
+        }
         return (short) val;
     }
 
@@ -35,5 +40,39 @@ public final class PhoneNumber {
         PhoneNumber pn = (PhoneNumber) obj;
         return pn.lineNum == lineNum && pn.prefix == prefix
                 && pn.areaCode == areaCode;
+    }
+
+
+    @Override
+    public int hashCode() {
+        int result = hashCode;
+        if (result == 0) {
+            result = Short.hashCode(areaCode);
+            result = 31 * result + Short.hashCode(prefix);
+            result = 31 * result + Short.hashCode(lineNum);
+            hashCode = result;
+        }
+        return result;
+    }
+
+    @Override
+    public int compareTo(PhoneNumber o) {
+        int result = Short.compare(areaCode,o.areaCode);
+        if (result == 0){
+            result = Short.compare(prefix,o.prefix);
+            if (result == 0){
+                result = Short.compare(lineNum,o.lineNum);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Map<PhoneNumber, String> m = new HashMap<>();
+        PhoneNumber key = new PhoneNumber(707, 867, 5309);
+        m.put(key, "Jenny");
+        System.out.println(m.get(new PhoneNumber(707, 867, 5309)));
+        System.out.println(m.get(key));
+        System.out.println(m.equals(new PhoneNumber(707, 867, 5309)));
     }
 }

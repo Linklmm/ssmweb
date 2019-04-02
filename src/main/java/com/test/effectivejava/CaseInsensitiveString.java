@@ -11,7 +11,7 @@ import java.util.Objects;
  * @Version 1.0
  * @Description 第十条
  */
-public final class CaseInsensitiveString {
+public final class CaseInsensitiveString implements Comparable<CaseInsensitiveString>{
     private final String s;
 
     public CaseInsensitiveString(String s) {
@@ -37,5 +37,10 @@ public final class CaseInsensitiveString {
     public boolean equals2(Object o){
         return o instanceof CaseInsensitiveString &&
                 ((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
+    }
+
+    @Override
+    public int compareTo(CaseInsensitiveString o) {
+        return String.CASE_INSENSITIVE_ORDER.compare(s,o.s);
     }
 }
