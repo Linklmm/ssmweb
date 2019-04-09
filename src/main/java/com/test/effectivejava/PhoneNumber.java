@@ -1,5 +1,6 @@
 package com.test.effectivejava;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,12 +8,12 @@ import java.util.Map;
  * 版权声明：Copyright(c) 2019
  *
  * @program: ssmweb
- * @Author minmin.liu(minmin.liu @ ucarinc.com)
+ * @Author minmin.liu
  * @Date 2019-04-01 10:06
  * @Version 1.0
  * @Description 构建equals方法的具体事例
  */
-public final class PhoneNumber implements Comparable<PhoneNumber>{
+public final class PhoneNumber implements Comparable<PhoneNumber> {
     private final short areaCode, prefix, lineNum;
     private int hashCode;
 
@@ -57,14 +58,23 @@ public final class PhoneNumber implements Comparable<PhoneNumber>{
 
     @Override
     public int compareTo(PhoneNumber o) {
-        int result = Short.compare(areaCode,o.areaCode);
-        if (result == 0){
-            result = Short.compare(prefix,o.prefix);
-            if (result == 0){
-                result = Short.compare(lineNum,o.lineNum);
+        int result = Short.compare(areaCode, o.areaCode);
+        if (result == 0) {
+            result = Short.compare(prefix, o.prefix);
+            if (result == 0) {
+                result = Short.compare(lineNum, o.lineNum);
             }
         }
         return result;
+    }
+
+    private static final Comparator<PhoneNumber> COMPARATOR =
+            Comparator.comparingInt((PhoneNumber pn) -> pn.areaCode)
+                    .thenComparing(pn -> pn.prefix)
+                    .thenComparing(pn -> pn.lineNum);
+
+    public int compareTo2(PhoneNumber pn){
+        return COMPARATOR.compare(this,pn);
     }
 
     public static void main(String[] args) {
