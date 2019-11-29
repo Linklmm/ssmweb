@@ -12,7 +12,7 @@
     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <list>
-                <bean class="com.test.converter.StringToDateConverter"></bean>
+                <bean class="com.test.spring.converter.StringToDateConverter"></bean>
             </list>
         </property>
     </bean>

@@ -2,10 +2,10 @@
 <!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspctj/dtd/aspectj.dtd">
 <aspectj>
     <weaver>
-        <include within="com.test.aop.*"/>
+        <include within="com.test.spring.aop.*"/>
     </weaver>
 
     <aspects>
-        <aspect name="com.test.aop.AspectJTest"/>
+        <aspect name="com.test.spring.aop.AspectJTest"/>
     </aspects>
 </aspectj>

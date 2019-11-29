@@ -1,1 +1,1 @@
-http\://www.example.org/schema/user=com.test.customtag.MyNamespaceHandlerSupport
+http\://www.example.org/schema/user=com.test.spring.customtag.MyNamespaceHandlerSupport

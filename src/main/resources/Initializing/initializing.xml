@@ -9,5 +9,17 @@
                         http://www.springframework.org/schema/context/spring-context-4.0.xsd
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-    <bean id="car" class="com.test.spring.factorybean.CarFactoryBean" p:carInfo="超级跑车,400,200"></bean>
+
+<bean id="InitializingBeanTest" class="com.test.spring.initializingBean.InitializaingBeanTest">
+        <property name="name" value="陈越朋 1 号"/>
+
+    </bean>
+    <bean id="initializingBean" class="com.test.spring.initializingBean.InitializingBeanTest2"
+    init-method="setOtherName">
+        <property name="name" value="chen yue peng 1 号 "/>
+    </bean>
+    <bean id="lifeCycle" class="com.test.spring.beanInit.LifeCycleBean"
+    init-method="initMethod" destroy-method="destroyMethod">
+        <property name="test" value="test"/>
+    </bean>
 </beans>
