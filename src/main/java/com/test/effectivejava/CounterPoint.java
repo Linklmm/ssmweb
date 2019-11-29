@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 版权声明：Copyright(c) 2019
  *
  * @program: ssmweb
- * @Author minmin.liu(minmin.liu @ ucarinc.com)
+ * @Author minmin.liu
  * @Date 2019-03-27 08:37
  * @Version 1.0
  * @Description 扩展Point
