@@ -36,11 +36,23 @@ public class DuckTestDrive {
 
 	@Test
 	public void testDouble(){
-		double d = 7.145;
-		//DecimalFormat df = new DecimalFormat("#.00");
+		Double d = new Double(233.0);
+		System.out.println(d);
+		System.out.println(d.toString());
+		BigDecimal b = new BigDecimal(d.toString());
+		System.out.println(b.toString());
+		//BigDecimal b = new BigDecimal(d.toString());
+		//BigDecimal b2 =new BigDecimal(0);
+		////String result = b.toString();
+		//System.out.println("+"+b);
+		//System.out.println(b2.toString());
+		//
+		//String s = new String(d.toString());
+		//System.out.println(s);
+		//DecimalFormat df = new DecimalFormat();
 		//String str = df.format(d);
 		//System.out.println(str);
-		System.out.println(getPriceNum(d));
+		//System.out.println(getPriceNum(d));
 	}
 
 	/**
