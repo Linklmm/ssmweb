@@ -1,6 +1,8 @@
-package com.test.sourceCode;
+package com.test.sourceCode.list;
 
 
+import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -83,7 +85,7 @@ public class TestArrayLIst {
 
 		Integer[] array0 = new Integer[2];
 		list.toArray(array0);
-		log.info("toArray数组大小小于list，array[0]={},array[1]={},length:{}", array0[0], array0[1],array0.length);
+		log.info("toArray数组大小小于list，array[0]={},array[1]={},length:{}", array0[0], array0[1], array0.length);
 
 		Integer[] array1 = new Integer[list.size()];
 		list.toArray(array1);
@@ -96,8 +98,43 @@ public class TestArrayLIst {
 	}
 
 	@Test
-	public void test(){
+	public void test() {
 		String s = null;
+	}
+
+	/**
+	 * 测试Google的guava框架的lists工具的反转
+	 * Guava返回的是自己定义的List，不是JDK的ArrayList
+	 */
+	@Test
+	public void testReverse() {
+		List<String> list = new ArrayList<String>() {{
+			add("10");
+			add("20");
+			add("30");
+			add("40");
+		}};
+
+		log.info("反转之前：" + JSON.toJSONString(list));
+		list = Lists.reverse(list);
+		log.info("反转之后：" + JSON.toJSONString(list));
+	}
+
+	/**
+	 * 分组
+	 */
+	@Test
+	public void testPartition() {
+		List<String> list = new ArrayList<String>() {{
+			add("10");
+			add("20");
+			add("30");
+			add("40");
+		}};
+
+		log.info("分组之前：" + JSON.toJSONString(list));
+		List<List<String>> list2 = Lists.partition(list, 3);
+		log.info("分组之后：" + JSON.toJSONString(list2));
 	}
 
 }
