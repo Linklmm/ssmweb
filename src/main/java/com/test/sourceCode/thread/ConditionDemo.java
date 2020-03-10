@@ -29,7 +29,7 @@ public class ConditionDemo {
 				notFull.await();
 			}
 			items[putptr] = x;
-			if (++putptr == items.length){
+			if (++putptr == items.length) {
 				putptr = 0;
 			}
 			++count;
@@ -37,8 +37,8 @@ public class ConditionDemo {
 			notEmpty.signal();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-			log.info("happen exception,message is :{}",e.getMessage());
-		}finally {
+			log.info("happen exception,message is :{}", e.getMessage());
+		} finally {
 			lock.unlock();
 		}
 	}
@@ -46,12 +46,12 @@ public class ConditionDemo {
 	public Object take() throws InterruptedException {
 		try {
 			lock.lock();
-			while (0==count){
+			while (0 == count) {
 				//队列已空，take等待
 				notEmpty.await();
 			}
-			Object x=items[takeptr];
-			if (++takeptr == items.length){
+			Object x = items[takeptr];
+			if (++takeptr == items.length) {
 				takeptr = 0;
 			}
 			--count;

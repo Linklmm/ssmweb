@@ -17,7 +17,7 @@ public class CountDownLatchDemo {
 	 * 线程任务
 	 */
 
-	class Worker implements Runnable{
+	class Worker implements Runnable {
 		//定义计数锁所用来实现让一组线程全部启动完成之后，再一起执行
 		private final CountDownLatch startSignal;
 		private final CountDownLatch doneSiganl;
@@ -30,7 +30,7 @@ public class CountDownLatchDemo {
 		//子线程做的事情
 		@Override
 		public void run() {
-			log.info("{} is begin",Thread.currentThread().getName());
+			log.info("{} is begin", Thread.currentThread().getName());
 			try {
 				// await 时有两点需要注意：await 时 state 不会发生变化，
 				// 2：startSignal 的state初始化是 1，所以所有子线程都是获取不到锁的，
@@ -41,7 +41,7 @@ public class CountDownLatchDemo {
 				// countDown 前 8 次执行都会返回 false (releaseShared 方法)，执行第 9 次时，state 递减为 0，
 				// 会 countDown 成功，表示所有子线程都执行完了，会释放 await 在 doneSignal 上的主线程
 				doneSiganl.countDown();
-				log.info("{} is end",Thread.currentThread().getName());
+				log.info("{} is end", Thread.currentThread().getName());
 			} catch (InterruptedException e) {
 				log.info("startSignal happen exception");
 			}
@@ -49,7 +49,7 @@ public class CountDownLatchDemo {
 		}
 
 		void doWork() throws InterruptedException {
-			log.info("{} sleep 5s ......",Thread.currentThread().getName());
+			log.info("{} sleep 5s ......", Thread.currentThread().getName());
 			Thread.sleep(5000);
 		}
 
@@ -60,8 +60,8 @@ public class CountDownLatchDemo {
 		CountDownLatch startSignal = new CountDownLatch(1);
 		CountDownLatch doneSignal = new CountDownLatch(9);
 
-		for (int i =0;i<9;i++){
-			new Thread(new Worker(startSignal,doneSignal)).start();
+		for (int i = 0; i < 9; i++) {
+			new Thread(new Worker(startSignal, doneSignal)).start();
 		}
 		log.info("main is begin");
 		// 这行代码唤醒 9 个子线程，开始执行(因为 startSignal 锁的状态是 1，所以调用一次 countDown 方法就可以释放9个等待的子线程)
@@ -70,4 +70,5 @@ public class CountDownLatchDemo {
 		doneSignal.await();
 		log.info("main thread end");
 	}
+
 }

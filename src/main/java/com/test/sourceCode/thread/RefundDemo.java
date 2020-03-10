@@ -16,16 +16,17 @@ public class RefundDemo {
 	 * @param itemId
 	 * @return
 	 */
-	public boolean refundByItem(Long itemId){
+	public boolean refundByItem(Long itemId) {
 		try {
 			//模拟商品退款
 			Thread.sleep(30);
-			log.info("refund successs,itemId is {}",itemId);
+			log.info("refund successs,itemId is {}", itemId);
 			return true;
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-			log.info("happen exception ,message is {}",e.getMessage());
+			log.info("happen exception ,message is {}", e.getMessage());
 		}
 		return false;
 	}
+
 }
