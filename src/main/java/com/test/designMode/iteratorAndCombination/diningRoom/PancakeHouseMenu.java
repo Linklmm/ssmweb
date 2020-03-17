@@ -4,6 +4,7 @@ package com.test.designMode.iteratorAndCombination.diningRoom;
 import com.test.designMode.iteratorAndCombination.pojo.MenuItem;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import lombok.Data;
 
 /**
@@ -16,6 +17,9 @@ import lombok.Data;
 public class PancakeHouseMenu implements Serializable {
 	ArrayList menuItems;
 
+	public Iterator createIterator(){
+		return menuItems.iterator();
+	}
 	public PancakeHouseMenu() {
 		menuItems = new ArrayList();
 		addItem("K&B's pancake breakfast", "pancakes with scrambled eggs,and toast"

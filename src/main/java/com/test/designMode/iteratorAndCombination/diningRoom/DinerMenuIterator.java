@@ -17,41 +17,29 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DinerMenuIterator implements Serializable, Iterator {
 	private static final long serialVersionUID = -4926677013232252841L;
-	private static final int MAX_ITEMS =6;
-	private int numberOfItems = 0;
+
 	private MenuItem[] menuItems;
 
-	int position = 0;
+	private int position = 0;
+
+	public DinerMenuIterator(MenuItem[] menuItems) {
+		this.menuItems = menuItems;
+	}
 
 	@Override
 	public boolean hasNext() {
-		return false;
+		if (position >= menuItems.length || null == menuItems[position]) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	@Override
 	public Object next() {
-		return null;
-	}
-
-	public DinerMenuIterator() {
-		menuItems = new MenuItem[MAX_ITEMS];
-		addItem("Vegetarian BLT","11111111",
-				true,2.99);
-		addItem("Soup of the day","2222222",
-				false,3.29);
-		addItem("BLT","3333333",
-				false,2.99);
-		addItem("hot dog","444444",
-				false,3.05);
-	}
-
-	public void addItem(String name, String description, boolean vegetarian, double price) {
-		MenuItem menuItem = new MenuItem(name, description, vegetarian, price);
-		if (numberOfItems >= MAX_ITEMS){
-			log.info("sorry ,menu is full! can't add item");
-		}else {
-			menuItems[numberOfItems++] = menuItem;
-		}
+		MenuItem menuItem = menuItems[position];
+		position++;
+		return menuItem;
 	}
 
 }

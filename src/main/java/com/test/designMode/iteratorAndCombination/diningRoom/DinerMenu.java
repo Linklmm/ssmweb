@@ -3,6 +3,7 @@ package com.test.designMode.iteratorAndCombination.diningRoom;
 
 import com.test.designMode.iteratorAndCombination.pojo.MenuItem;
 import java.io.Serializable;
+import java.util.Iterator;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,6 +40,10 @@ public class DinerMenu implements Serializable {
 		}else {
 			menuItems[numberOfItems++] = menuItem;
 		}
+	}
+
+	public Iterator createIterator(){
+		return new DinerMenuIterator(menuItems);
 	}
 
 }
