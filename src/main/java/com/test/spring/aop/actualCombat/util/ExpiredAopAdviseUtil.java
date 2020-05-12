@@ -43,4 +43,14 @@ public class ExpiredAopAdviseUtil {
 		log.info("---method {} invoked, expired time: {} ms---", methodName, expiredTime);
 		//
 	}
+
+	public static void main(String[] args) {
+		for (int i = 0;i<10;i++){
+			if (i == 2){
+				log.info("jin");
+				break;
+			}
+			log.info("i:{}",i);
+		}
+	}
 }
