@@ -3,7 +3,7 @@ package com.spring.night.testMybatis;
 
 import com.alibaba.fastjson.JSON;
 import com.spring.night.dao.UserMapper;
-import com.spring.night.po.User;
+import com.spring.po.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

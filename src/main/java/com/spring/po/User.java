@@ -1,4 +1,4 @@
-package com.spring.night.po;
+package com.spring.po;
 
 
 import lombok.Data;

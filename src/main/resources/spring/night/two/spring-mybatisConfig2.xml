@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="com.spring.night.po.User" alias="User"/>
+        <typeAlias type="com.spring.po.User" alias="User"/>
     </typeAliases>
 
     <mappers>

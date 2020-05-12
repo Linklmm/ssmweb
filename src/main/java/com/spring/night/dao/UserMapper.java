@@ -1,7 +1,7 @@
 package com.spring.night.dao;
 
 
-import com.spring.night.po.User;
+import com.spring.po.User;
 
 /**
  * Description 用户数据dao层

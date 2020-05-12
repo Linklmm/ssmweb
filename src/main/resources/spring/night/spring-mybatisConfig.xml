@@ -9,7 +9,7 @@
         <setting name="defaultExecutorType" value="REUSE"/>
     </settings>
     <typeAliases>
-        <typeAlias type="com.spring.night.po.User" alias="User"/>
+        <typeAlias type="com.spring.po.User" alias="User"/>
     </typeAliases>
 
     <environments default="development">
