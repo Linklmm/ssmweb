@@ -1,4 +1,4 @@
-package com.test.serialize.externalize;
+package com.test.serialize.destroySerialize;
 
 
 import com.test.serialize.SerializeConstant;
@@ -9,37 +9,37 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 
 /**
- * Description 序列化代码实现
+ * Description 序列化对单例的破坏
  * @author playboy
- * @date 2020-04-27 08:45
+ * @date 2020-04-27 11:16
  * version 1.0
  */
-public class ExternalizableDemo {
-
+@Slf4j
+public class SerializableDemo {
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
-		//写对象到文件上
-		ObjectOutputStream oos = null;
+		//read
+		ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(SerializeConstant.FILE));
+		Singleton singleton;
 		try {
-			oos = new ObjectOutputStream(new FileOutputStream(SerializeConstant.FILE));
-			User user = new User();
-			user.setAge(23);
-			user.setName("lmm");
-			oos.writeObject(user);
+			singleton = Singleton.getSingleton();
+			oos.writeObject(singleton);
 		} finally {
 			IOUtils.closeQuietly(oos);
 		}
-		//读对象到文件上
+		//read
 		File file = new File(SerializeConstant.FILE);
 		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+		Singleton newInstance;
 		try {
-			User newInstance = (User) ois.readObject();
-			System.out.println(newInstance);
+			newInstance = (Singleton) ois.readObject();
 		} finally {
 			IOUtils.closeQuietly(ois);
 		}
+		log.info("是否构造了新对象，singleton == newInstance :{}", singleton == newInstance);
 
 	}
 

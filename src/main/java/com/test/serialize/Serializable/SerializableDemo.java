@@ -10,6 +10,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import org.apache.commons.io.IOUtils;
 
+import static com.test.serialize.SerializeConstant.FILE;
+
 /**
  * Description 测试Serializable序列化
  * @author playboy
@@ -17,8 +19,6 @@ import org.apache.commons.io.IOUtils;
  * version 1.0
  */
 public class SerializableDemo {
-	private static final String FILE = "tempfile";
-
 	public static void main(String[] args) {
 
 		ObjectOutputStream oos = null;
