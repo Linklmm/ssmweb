@@ -40,7 +40,7 @@
         <context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
     </context:component-scan>
 
-    <!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
+    <!-- 定义跳转的文件的前后缀 ，视图模式配置 即当controller返回一个test时，会转化成/WEB-INF/jsp/test.jsp-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp"/>

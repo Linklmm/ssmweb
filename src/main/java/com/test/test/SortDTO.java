@@ -68,7 +68,7 @@ public class SortDTO implements Serializable {
 		Integer integer2 = 129;
 		Integer integer3 = 129;
 		System.out.println(integer == integer1);
-		System.out.println(integer2==integer3);
+		System.out.println(integer2 == integer3);
 	}
 
 	@Test
@@ -77,6 +77,16 @@ public class SortDTO implements Serializable {
 		//log.info("user:{}",JSON.toJSONString(user));
 		System.out.println(user.getId());
 
+	}
+
+	@Test
+	public void test1() {
+		User[] users1 = {new User("java", 1)};
+		User[] users2 = Arrays.copyOf(users1, users1.length);
+
+		users1[0].setName("jdk");
+		log.error("o1:{}", JSON.toJSONString(users1));
+		log.error("o2:{}", JSON.toJSONString(users2));
 	}
 
 }

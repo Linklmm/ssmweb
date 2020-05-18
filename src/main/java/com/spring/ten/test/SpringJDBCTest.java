@@ -19,8 +19,9 @@ public class SpringJDBCTest {
 		ApplicationContext act = new ClassPathXmlApplicationContext("spring/ten/spring-config.xml");
 
 		UserService userService = (UserService) act.getBean("userService");
-		User user = new User("张三",20,"男");
+		User user = new User("张三", 20, "男");
 		userService.save(user);
 
 	}
+
 }
