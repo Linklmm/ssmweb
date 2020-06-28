@@ -2,7 +2,6 @@ package com.test.proxy.staticProxy;
 
 
 import com.test.proxy.staticProxy.Impl.HelloSeriviceImpl;
-import org.junit.jupiter.api.Test;
 
 /**
  * Description 测试静态代理
