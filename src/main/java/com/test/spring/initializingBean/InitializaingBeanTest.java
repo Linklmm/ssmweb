@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 版权声明：Copyright(c) 2019
  *
  * @program: ssmweb
- * @Author myFlowerYourGrass
+ * @author myFlowerYourGrass
  * @Date 2019-10-17 08:53
  * @Version 1.0
  * @Description InitializingBean测试
