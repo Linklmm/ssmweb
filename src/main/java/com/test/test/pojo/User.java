@@ -10,6 +10,7 @@ package com.test.test.pojo;
 public class User {
 	private String name;
 	private int id=1;
+	private Boolean test;
 
 	public User(String name, int Nid) {
 		this.name = name;
@@ -19,6 +20,13 @@ public class User {
 	public User() {
 	}
 
+	public Boolean getTest() {
+		return test;
+	}
+
+	public void setTest(Boolean test) {
+		this.test = test;
+	}
 
 	public String getName() {
 		return name;
