@@ -2,10 +2,10 @@ package com.test.test;
 
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.test.test.pojo.User;
 
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Description 实现类
@@ -14,10 +14,15 @@ import java.util.Map;
  * @date 2020-06-19 09:19
  * version 1.0
  */
-public class ABImpl extends B {
+public class ABImpl implements B {
     @Override
     public void say() {
         System.out.println("ab");
+    }
+
+    @Override
+    public void sayC() {
+        System.out.println("c Implements");
     }
 
     public static void main(String[] args) {
@@ -38,5 +43,10 @@ public class ABImpl extends B {
 
         System.out.println("=============自定义==============");
         System.out.println(map.get("key"));
+
+        String string = "[abc,123,def,dnf,lol]";
+        List<String> ss = Arrays.asList(string.substring(1, string.length() - 1).split(","));
+        System.out.println("==================");
+        System.out.println(JSON.toJSONString(ss));
     }
 }

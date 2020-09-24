@@ -7,9 +7,9 @@ package com.test.test;
  * @date 2020-06-19 09:20
  * version 1.0
  */
-public abstract class B implements A{
+public interface B extends A ,C{
 	@Override
-	public void say() {
+	default void say() {
 		System.out.println("b");
 	}
 
