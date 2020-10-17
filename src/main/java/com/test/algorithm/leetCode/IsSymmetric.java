@@ -14,6 +14,7 @@ public class IsSymmetric {
         if (Objects.isNull(root)) {
             return true;
         }
+
         if ((Objects.isNull(root.left) && Objects.isNull(root.right))) {
             return true;
         } else if (Objects.nonNull(root.left) && Objects.nonNull(root.right)) {
