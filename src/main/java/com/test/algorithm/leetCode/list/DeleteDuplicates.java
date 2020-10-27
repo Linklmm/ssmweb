@@ -1,10 +1,9 @@
-package com.test.algorithm.leetCode;
+package com.test.algorithm.leetCode.list;
 
 
 import com.alibaba.fastjson.JSON;
 import com.test.algorithm.leetCode.pojo.ListNode;
-import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 import java.util.TreeMap;
 

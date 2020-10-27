@@ -1,4 +1,4 @@
-package com.test.algorithm.leetCode;
+package com.test.algorithm.leetCode.Tree;
 
 import com.test.algorithm.leetCode.pojo.TreeNode;
 import lombok.extern.slf4j.Slf4j;
@@ -6,8 +6,17 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Objects;
 
 /**
- * 101.对称二叉树
- */
+ * @program: ssmweb
+ * @description: 给定一个二叉树，检查它是否是镜像对称的。
+ * 101. 对称二叉树
+ * 1
+ * / \
+ * 2   2
+ * / \ / \
+ * 3  4 4  3
+ * @author: playboy
+ * @create: 2020-10-11 08:58
+ **/
 @Slf4j
 public class IsSymmetric {
     public static boolean isSymmetric(TreeNode root) {

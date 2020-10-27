@@ -1,4 +1,4 @@
-package com.test.algorithm.leetCode;
+package com.test.algorithm.leetCode.array;
 
 import com.alibaba.fastjson.JSON;
 

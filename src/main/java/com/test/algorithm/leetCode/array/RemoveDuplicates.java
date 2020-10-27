@@ -1,8 +1,8 @@
-package com.test.algorithm.leetCode;
+package com.test.algorithm.leetCode.array;
 
 
 import com.alibaba.fastjson.JSON;
-import java.util.HashMap;
+
 import java.util.Map;
 import java.util.TreeMap;
 

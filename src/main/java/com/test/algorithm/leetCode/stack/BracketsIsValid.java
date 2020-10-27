@@ -1,4 +1,4 @@
-package com.test.algorithm.leetCode;
+package com.test.algorithm.leetCode.stack;
 
 
 import java.util.Arrays;
