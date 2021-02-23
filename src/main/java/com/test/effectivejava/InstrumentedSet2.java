@@ -8,10 +8,10 @@ import java.util.Set;
  * @Date: 2019/4/8 09:58
  * @Description 复合，使用复合/转发的方法来代替InstrumentedHashSet类
  */
-public class InstrumentedSet2<E>  extends ForwardingSet<E>{
+public class InstrumentedSet2<E> extends ForwardingSet<E> {
     private int addCount = 0;
 
-    public InstrumentedSet2(Set<E> s){
+    public InstrumentedSet2(Set<E> s) {
         super(s);
     }
 

@@ -10,7 +10,7 @@ package com.test.spring.aop;
  * @Description 用于方法调用前后打印时间，在aop中，扮演的是横切关注点的角色
  */
 public class TimeHandler {
-    public void printTime(){
-        System.out.println("CurrentTime: "+System.currentTimeMillis());
+    public void printTime() {
+        System.out.println("CurrentTime: " + System.currentTimeMillis());
     }
 }

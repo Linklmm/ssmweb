@@ -13,11 +13,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Chooser<T> {
     private final Object[] choiceArray;
 
-    public Chooser(Collection choices){
+    public Chooser(Collection choices) {
         choiceArray = choices.toArray();
     }
 
-    public Object choose(){
+    public Object choose() {
         Random rand = ThreadLocalRandom.current();
         return choiceArray[rand.nextInt(choiceArray.length)];
     }

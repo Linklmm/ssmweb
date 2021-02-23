@@ -7,6 +7,6 @@ public class TestLsp {
     public static void main(String[] args) {
         B b = new B();
         B b2 = b.say();
-        B b3= new C();
+        B b3 = new C();
     }
 }

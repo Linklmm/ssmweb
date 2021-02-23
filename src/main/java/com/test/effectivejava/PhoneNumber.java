@@ -73,8 +73,8 @@ public final class PhoneNumber implements Comparable<PhoneNumber> {
                     .thenComparing(pn -> pn.prefix)
                     .thenComparing(pn -> pn.lineNum);
 
-    public int compareTo2(PhoneNumber pn){
-        return COMPARATOR.compare(this,pn);
+    public int compareTo2(PhoneNumber pn) {
+        return COMPARATOR.compare(this, pn);
     }
 
     public static void main(String[] args) {

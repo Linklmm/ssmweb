@@ -3,53 +3,54 @@ package com.test.test.pojo;
 
 /**
  * Description
+ *
  * @author playboy
  * @date 2020-03-28 09:26
  * version 1.0
  */
 public class User {
-	private String name;
-	private int id=1;
-	private Boolean test;
+    private String name;
+    private int id = 1;
+    private Boolean test;
 
-	public User(String name, int Nid) {
-		this.name = name;
-		id = Nid;
-	}
+    public User(String name, int Nid) {
+        this.name = name;
+        id = Nid;
+    }
 
-	public User() {
-	}
+    public User() {
+    }
 
-	public Boolean getTest() {
-		return test;
-	}
+    public Boolean getTest() {
+        return test;
+    }
 
-	public void setTest(Boolean test) {
-		this.test = test;
-	}
+    public void setTest(Boolean test) {
+        this.test = test;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	@Override
-	public String toString() {
-		return "User{" +
-				"name='" + name + '\'' +
-				", id=" + id +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                '}';
+    }
 
 }

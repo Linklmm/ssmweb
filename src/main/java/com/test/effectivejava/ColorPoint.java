@@ -35,18 +35,19 @@ public class ColorPoint extends Point {
 
     /**
      * “混合比较”时忽略颜色信息,提供了对称性，但是牺牲了传递性
+     *
      * @param o
      * @return
      */
-    public boolean equals2(Object o){
-        if (!(o instanceof Point)){
+    public boolean equals2(Object o) {
+        if (!(o instanceof Point)) {
             return false;
         }
 
-        if (!(o instanceof ColorPoint)){
+        if (!(o instanceof ColorPoint)) {
             return o.equals(this);
         }
 
-        return super.equals(o)&&((ColorPoint) o).color == color;
+        return super.equals(o) && ((ColorPoint) o).color == color;
     }
 }

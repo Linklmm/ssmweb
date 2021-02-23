@@ -17,6 +17,6 @@ public class Rectangle extends FigureOptimize {
 
     @Override
     double area() {
-        return length*width;
+        return length * width;
     }
 }

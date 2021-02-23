@@ -14,7 +14,7 @@ public class AnonymousClass {
     public static void main(String[] args) {
         List<String> words = new ArrayList<>();
         String ss = "lmm";
-        String ss2 ="link";
+        String ss2 = "link";
         String ss3 = "flower";
         words.add(ss);
         words.add(ss2);
@@ -22,10 +22,10 @@ public class AnonymousClass {
         Collections.sort(words, new Comparator<String>() {
             @Override
             public int compare(String s1, String s2) {
-                return Integer.compare(s1.length(),s2.length());
+                return Integer.compare(s1.length(), s2.length());
             }
         });
         //lambda表达式
-        Collections.sort(words,(s1,s2)->Integer.compare(s1.length(),s2.length()));
+        Collections.sort(words, (s1, s2) -> Integer.compare(s1.length(), s2.length()));
     }
 }

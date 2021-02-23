@@ -20,7 +20,7 @@ public class TestBean {
         this.testStr = testStr;
     }
 
-    public void test(){
+    public void test() {
         System.out.println("test");
     }
 }

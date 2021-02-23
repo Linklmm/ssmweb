@@ -15,7 +15,7 @@ import org.springframework.context.ApplicationListener;
 public class TestListener implements ApplicationListener {
     @Override
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
-        if (applicationEvent instanceof TestEvent){
+        if (applicationEvent instanceof TestEvent) {
             TestEvent testEvent = (TestEvent) applicationEvent;
             testEvent.print();
             System.out.println("我监听到了");

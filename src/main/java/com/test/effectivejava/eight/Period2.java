@@ -13,14 +13,14 @@ public class Period2 {
     public Period2(Date start, Date end) {
         this.start = new Date(start.getTime());
         this.end = new Date(end.getTime());
-        if (this.start.compareTo(this.end)>0){
+        if (this.start.compareTo(this.end) > 0) {
             throw new IllegalArgumentException(
-                    this.start+" after "+this.end
+                    this.start + " after " + this.end
             );
         }
     }
 
-    public Date getStart(){
+    public Date getStart() {
         return start;
     }
 

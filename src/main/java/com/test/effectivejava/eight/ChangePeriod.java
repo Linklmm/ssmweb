@@ -10,14 +10,14 @@ public class ChangePeriod {
     public static void main(String[] args) {
         Date start = new Date();
         Date end = new Date();
-        Period p = new Period(start,end);
+        Period p = new Period(start, end);
         System.out.println(p);
         end.setYear(78);
         System.out.println(p);
 
         Date start2 = new Date();
         Date end2 = new Date();
-        Period2 period2 = new Period2(start2,end2);
+        Period2 period2 = new Period2(start2, end2);
         System.out.println(period2);
         end2.setYear(78);
         System.out.println(period2);
@@ -26,7 +26,7 @@ public class ChangePeriod {
 
         Date start3 = new Date();
         Date end3 = new Date();
-        Period3 period3 = new Period3(start3,end3);
+        Period3 period3 = new Period3(start3, end3);
         System.out.println(period3);
         end2.setYear(78);
         System.out.println(period3);

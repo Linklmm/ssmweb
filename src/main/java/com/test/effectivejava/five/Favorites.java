@@ -14,10 +14,10 @@ import java.util.Objects;
  * @Description 优先考虑类型安全的异构容器
  */
 public class Favorites {
-    private Map<Class<?>,Object> favorites = new HashMap<>();
+    private Map<Class<?>, Object> favorites = new HashMap<>();
 
     public <T> void putFavorites(Class<T> type, T instance) {
-        favorites.put(Objects.requireNonNull(type),instance);
+        favorites.put(Objects.requireNonNull(type), instance);
     }
 
     public <T> T getFavorites(Class<T> type) {
@@ -26,13 +26,13 @@ public class Favorites {
 
     public static void main(String[] args) {
         Favorites f = new Favorites();
-        f.putFavorites(String.class,"java");
-        f.putFavorites(Integer.class,0xcafebabe);
-        f.putFavorites(Class.class,Favorites.class);
+        f.putFavorites(String.class, "java");
+        f.putFavorites(Integer.class, 0xcafebabe);
+        f.putFavorites(Class.class, Favorites.class);
         String favoritesString = f.getFavorites(String.class);
         Integer favoriteInteger = f.getFavorites(Integer.class);
         Class<?> favoriteClass = f.getFavorites(Class.class);
-        System.out.printf("%s %x %s%n",favoritesString,
-                favoriteInteger,favoriteClass);
+        System.out.printf("%s %x %s%n", favoritesString,
+                favoriteInteger, favoriteClass);
     }
 }

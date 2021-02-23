@@ -8,19 +8,32 @@ import org.junit.jupiter.api.Test;
  */
 public class Sample {
     @Test
-    public static void m1(){}
-    public static void m2(){}
+    public static void m1() {
+    }
+
+    public static void m2() {
+    }
+
     @Test
-    public static void m3(){
+    public static void m3() {
         throw new RuntimeException("Boom");
     }
-    public static void m4(){}
+
+    public static void m4() {
+    }
+
     @Test
-    public void m5(){}
-    public static void m6(){}
+    public void m5() {
+    }
+
+    public static void m6() {
+    }
+
     @Test
-    public static void m7(){
+    public static void m7() {
         throw new RuntimeException("Crash");
     }
-    public static void m8(){}
+
+    public static void m8() {
+    }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 @Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
-    private Logger log=Logger.getLogger(UserController.class);
+    private Logger log = Logger.getLogger(UserController.class);
     @Resource
     private UserDao userDao;
 

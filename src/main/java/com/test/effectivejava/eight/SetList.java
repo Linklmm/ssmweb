@@ -24,7 +24,7 @@ public class SetList {
             set.remove(i);
 //            list.remove(i);
 //            list.remove((Integer) i);
-            if (list.get(i).equals(-3)){
+            if (list.get(i).equals(-3)) {
                 list.remove(i);
             }
         }

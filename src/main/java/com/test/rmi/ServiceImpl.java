@@ -13,13 +13,14 @@ import java.rmi.server.UnicastRemoteObject;
  * @Description 服务实现
  */
 public class ServiceImpl extends UnicastRemoteObject implements Iservice {
-    protected ServiceImpl() throws RemoteException{
+    protected ServiceImpl() throws RemoteException {
         super();
     }
+
     @Override
     public String queryName(String no) throws RemoteException {
         //方法的具体实现
-        System.out.println("hello"+no);
+        System.out.println("hello" + no);
         return String.valueOf(System.currentTimeMillis());
     }
 }

@@ -20,9 +20,10 @@ public class SameTreeNode {
                 right = isSameTree(rightP, rightQ);
                 return left && right;
             }
-        }if (null == p && null ==q){
+        }
+        if (null == p && null == q) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }

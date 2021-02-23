@@ -7,9 +7,10 @@ package com.test.effectivejava;
  */
 public class Super {
     public Super() {
-    overrideMe();
+        overrideMe();
     }
-    public void overrideMe(){
+
+    public void overrideMe() {
 
     }
 }

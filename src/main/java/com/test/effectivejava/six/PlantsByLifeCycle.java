@@ -12,8 +12,8 @@ public class PlantsByLifeCycle {
     public static void main(String[] args) {
         Set<Plant>[] plantsByLifeCycle =
                 (Set<Plant>[]) new Set[Plant.LifeCycle.values().length];
-        for (int i =0;i<plantsByLifeCycle.length;i++){
-            plantsByLifeCycle[i] =new HashSet<>();
+        for (int i = 0; i < plantsByLifeCycle.length; i++) {
+            plantsByLifeCycle[i] = new HashSet<>();
         }
     }
 }

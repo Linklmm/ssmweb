@@ -15,23 +15,25 @@ public class Bigram {
         this.first = first;
         this.second = second;
     }
+
     //没能将equals方法覆盖，而是将它重载，为了覆盖Object.equals方法
     //必须定义一个参数为Object类型的equals方法
 //    @Override
     //public boolean equals(Object b)
-    public boolean equals(Bigram b){
-        return b.first == first&&b.second ==second;
+    public boolean equals(Bigram b) {
+        return b.first == first && b.second == second;
     }
+
     @Override
-    public int hashCode(){
-        return 31*first+second;
+    public int hashCode() {
+        return 31 * first + second;
     }
 
     public static void main(String[] args) {
         Set<Bigram> s = new HashSet<>();
-        for (int i=0;i<10;i++){
-            for (char ch = 'a';ch <= 'z';ch++){
-                s.add(new Bigram(ch,ch));
+        for (int i = 0; i < 10; i++) {
+            for (char ch = 'a'; ch <= 'z'; ch++) {
+                s.add(new Bigram(ch, ch));
             }
         }
         System.out.println(s.size());

@@ -10,7 +10,7 @@ package com.test.spring.aware;
  * @Description 激活aware方法
  */
 public class Hello {
-    public void say(){
+    public void say() {
         System.out.println("myLover");
     }
 }

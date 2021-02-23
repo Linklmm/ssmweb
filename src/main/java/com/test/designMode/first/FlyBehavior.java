@@ -8,5 +8,5 @@ package com.test.designMode.first;
  * @Version: 1.0
  */
 public interface FlyBehavior {
-	public void fly();
+    public void fly();
 }

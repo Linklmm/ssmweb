@@ -11,5 +11,6 @@ package com.test.spring.aop.dao;
  */
 public interface Dao {
     public void select();
+
     public void insert();
 }

@@ -14,11 +14,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Chooser2<T> {
     private final List<T> choiceList;
 
-    public Chooser2(Collection<T> choices){
+    public Chooser2(Collection<T> choices) {
         choiceList = new ArrayList<>(choices);
     }
 
-    public T choose(){
+    public T choose() {
         Random random = ThreadLocalRandom.current();
         return choiceList.get(random.nextInt(choiceList.size()));
     }

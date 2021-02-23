@@ -14,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @Description 构造器循环依赖测试
  */
 public class TestCircleByConstructor {
-    public  void testCircleByConsturctor()throws Throwable {
+    public void testCircleByConsturctor() throws Throwable {
         try {
             new ClassPathXmlApplicationContext("cycle/cycle-test1.xml");
         } catch (BeansException e) {
@@ -22,6 +22,7 @@ public class TestCircleByConstructor {
             throw el;
         }
     }
+
     public void testCircleBySetterAndPrototype() throws Throwable {
         try {
             ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("cycle/cycle-test2.xml");

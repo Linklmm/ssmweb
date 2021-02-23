@@ -7,8 +7,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * 版权声明：Copyright(c) 2019
  *
- * @program: ssmweb
  * @author myFlowerYourGrass
+ * @program: ssmweb
  * @Date 2019-10-17 08:53
  * @Version 1.0
  * @Description InitializingBean测试
@@ -33,6 +33,6 @@ public class InitializaingBeanTest implements InitializingBean {
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("Initializing/initializing.xml");
         InitializaingBeanTest test = (InitializaingBeanTest) applicationContext.getBean("InitializingBeanTest");
-        System.out.println("name :"+test.getName());
+        System.out.println("name :" + test.getName());
     }
 }

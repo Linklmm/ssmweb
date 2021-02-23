@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * Description 原型模式
+ *
  * @author playboy
  * @date 2020-06-17 08:19
  * version 1.0
@@ -15,12 +16,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class People implements Cloneable {
-	private String name;
-	private Integer id;
-	private School school;
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		return super.clone();
-	}
+    private String name;
+    private Integer id;
+    private School school;
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
 }

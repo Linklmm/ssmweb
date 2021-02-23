@@ -8,5 +8,5 @@ package com.test.designMode.observe;
  * @version: 1.0
  */
 public interface DisplayElement {
-	public void display();
+    public void display();
 }

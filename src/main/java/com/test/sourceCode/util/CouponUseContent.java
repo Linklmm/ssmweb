@@ -2,6 +2,7 @@ package com.test.sourceCode.util;
 
 
 import java.io.Serializable;
+
 import lombok.Data;
 
 import static com.test.sourceCode.util.TestCouponContent.COUPON_USE;
@@ -14,29 +15,29 @@ import static com.test.sourceCode.util.TestCouponContent.COUPON_USE;
  */
 @Data
 public class CouponUseContent implements Serializable {
-	/**
-	 * 使用说明标题
-	 */
-	private String useTitle;
-	/**
-	 * 使用说明描述
-	 */
-	private String useDesc;
+    /**
+     * 使用说明标题
+     */
+    private String useTitle;
+    /**
+     * 使用说明描述
+     */
+    private String useDesc;
 
-	public CouponUseContent(String content) {
-		String[] contents = content.split(COUPON_USE);
-		this.useTitle = contents[0];
-		if (contents.length>1){
-			this.useDesc = contents[1].replaceAll("[\n\r]+$","");
-		}
-	}
+    public CouponUseContent(String content) {
+        String[] contents = content.split(COUPON_USE);
+        this.useTitle = contents[0];
+        if (contents.length > 1) {
+            this.useDesc = contents[1].replaceAll("[\n\r]+$", "");
+        }
+    }
 
-	@Override
-	public String toString() {
-		return "CouponUseContent{" +
-				"useTitle='" + useTitle + '\'' +
-				", useDesc='" + useDesc + '\'' +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "CouponUseContent{" +
+                "useTitle='" + useTitle + '\'' +
+                ", useDesc='" + useDesc + '\'' +
+                '}';
+    }
 
 }

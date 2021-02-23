@@ -10,6 +10,6 @@ import lombok.Data;
  * @createTime 2020年08月20日 15:29:00
  */
 @Data
-public class ResponseA extends BaseResponse{
+public class ResponseA extends BaseResponse {
     private String name;
 }

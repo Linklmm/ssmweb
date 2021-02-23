@@ -72,7 +72,7 @@ public class IsRomanNumeral {
         Date date = new Date();
         System.out.println(date);
 
-        String s ="2";
+        String s = "2";
         System.out.println(Long.valueOf(s));
 
         List<Long> list = new ArrayList<Long>();

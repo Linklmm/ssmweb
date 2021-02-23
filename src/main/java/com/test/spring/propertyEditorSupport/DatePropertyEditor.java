@@ -15,7 +15,7 @@ import java.util.Date;
  * @Description 使用自定义属性编辑器
  */
 public class DatePropertyEditor extends PropertyEditorSupport {
-    private String format= "yyyy-MM-dd";
+    private String format = "yyyy-MM-dd";
 
     public void setFormat(String format) {
         this.format = format;
@@ -27,7 +27,7 @@ public class DatePropertyEditor extends PropertyEditorSupport {
 
     @Override
     public void setAsText(String text) throws IllegalArgumentException {
-        System.out.println("text:"+text);
+        System.out.println("text:" + text);
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         try {
             Date d = sdf.parse(text);

@@ -6,11 +6,11 @@
     <title>用户信息列表</title>
 </head>
 <body>
-    <c:if test="${!empty userList}">
-        <c:forEach var="user" items="${userList}">
-            ${user.user_name}
-            姓名：${user.id} &nbsp;&nbsp;手机号：${user.phone} &nbsp;&nbsp;邮箱：${user.email} &nbsp;&nbsp;<br>
-        </c:forEach>
-    </c:if>
+<c:if test="${!empty userList}">
+    <c:forEach var="user" items="${userList}">
+        ${user.user_name}
+        姓名：${user.id} &nbsp;&nbsp;手机号：${user.phone} &nbsp;&nbsp;邮箱：${user.email} &nbsp;&nbsp;<br>
+    </c:forEach>
+</c:if>
 </body>
 </html>

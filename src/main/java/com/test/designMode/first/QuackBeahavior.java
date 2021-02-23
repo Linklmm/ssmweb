@@ -8,5 +8,5 @@ package com.test.designMode.first;
  * @Version: 1.0
  */
 public interface QuackBeahavior {
-	public void quack();
+    public void quack();
 }

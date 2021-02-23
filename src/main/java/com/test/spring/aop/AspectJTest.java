@@ -19,24 +19,26 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class AspectJTest {
     @Pointcut("execution(* *.test(..))")
-    public void test(){
+    public void test() {
 
     }
+
     @Before("test()")
-    public void beforeTest(){
+    public void beforeTest() {
         System.out.println("beforeTest");
     }
+
     @After("test()")
-    public void afterTest(){
+    public void afterTest() {
         System.out.println("afterTest");
     }
 
     @Around("test()")
-    public Object arroundTest(ProceedingJoinPoint p){
+    public Object arroundTest(ProceedingJoinPoint p) {
         System.out.println("before1");
         Object o = null;
         try {
-            o=p.proceed();
+            o = p.proceed();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         }

@@ -55,7 +55,7 @@ public class IsSymmetric {
                         isLeftSymmetric = isSymmetric(left.left, right.right);
                     }
                 }
-                if (Objects.isNull(left.left) && Objects.isNull(right.right)){
+                if (Objects.isNull(left.left) && Objects.isNull(right.right)) {
                     isLeftSymmetric = true;
                 }
                 if (Objects.nonNull(left.right) && Objects.nonNull(right.left)) {
@@ -63,7 +63,7 @@ public class IsSymmetric {
                         isRightSymmetric = isSymmetric(left.right, right.left);
                     }
                 }
-                if (Objects.isNull(left.right) && Objects.isNull(right.left)){
+                if (Objects.isNull(left.right) && Objects.isNull(right.left)) {
                     isRightSymmetric = true;
                 }
                 return isLeftSymmetric && isRightSymmetric;

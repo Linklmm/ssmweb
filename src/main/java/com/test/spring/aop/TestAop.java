@@ -15,7 +15,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class TestAop {
 
-    public static void testAop(){
+    public static void testAop() {
         ApplicationContext bf = new ClassPathXmlApplicationContext("aop/aop.xml");
 
         Dao dao = (Dao) bf.getBean("daoImpl");

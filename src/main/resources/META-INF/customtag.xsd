@@ -5,9 +5,9 @@
         elementFormDefault="qualified">
     <element name="user">
         <complexType>
-            <attribute name ="id" type = "string"/>
-            <attribute name ="userName" type = "string"/>
-            <attribute name ="email" type = "string"/>
+            <attribute name="id" type="string"/>
+            <attribute name="userName" type="string"/>
+            <attribute name="email" type="string"/>
         </complexType>
     </element>
     <element name="student">

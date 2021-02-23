@@ -25,7 +25,7 @@ public enum Operation {
         return symbol;
     }
 
-    public double apply(double x,double y){
-        return op.applyAsDouble(x,y);
+    public double apply(double x, double y) {
+        return op.applyAsDouble(x, y);
     }
 }

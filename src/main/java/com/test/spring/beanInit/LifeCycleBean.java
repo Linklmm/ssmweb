@@ -33,7 +33,7 @@ public class LifeCycleBean implements BeanNameAware, BeanFactoryAware, BeanClass
         System.out.println("构造函数调用...");
     }
 
-    public void display(){
+    public void display() {
         System.out.println("方法调用...");
     }
 
@@ -74,10 +74,11 @@ public class LifeCycleBean implements BeanNameAware, BeanFactoryAware, BeanClass
         return o;
     }
 
-    public void initMethod(){
+    public void initMethod() {
         System.out.println("init-method 被调用...");
     }
-    public void destroyMethod(){
+
+    public void destroyMethod() {
         System.out.println("destroy-method 被调用....");
     }
 

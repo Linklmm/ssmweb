@@ -11,14 +11,15 @@ public class Period {
     private final Date end;
 
     public Period(Date start, Date end) {
-        if (start.compareTo(end)>0)
+        if (start.compareTo(end) > 0)
             throw new IllegalArgumentException(
-                    start+" after"+end
+                    start + " after" + end
             );
         this.start = start;
         this.end = end;
     }
-    public Date getStart(){
+
+    public Date getStart() {
         return start;
     }
 

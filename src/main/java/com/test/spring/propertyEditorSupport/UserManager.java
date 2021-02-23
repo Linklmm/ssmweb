@@ -24,6 +24,6 @@ public class UserManager {
 
     @Override
     public String toString() {
-        return "dateValue:"+dateValue;
+        return "dateValue:" + dateValue;
     }
 }

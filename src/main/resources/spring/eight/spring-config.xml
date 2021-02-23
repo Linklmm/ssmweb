@@ -11,10 +11,11 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/spring?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false"/>
+        <property name="url"
+                  value="jdbc:mysql://localhost:3306/spring?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false"/>
         <property name="username" value="root"/>
         <property name="password" value="123456"/>
-<!--        连接池启动时的初始值-->
+        <!--        连接池启动时的初始值-->
         <property name="initialSize" value="1"/>
         <property name="maxActive" value="300"/>
         <property name="maxIdle" value="2"/>

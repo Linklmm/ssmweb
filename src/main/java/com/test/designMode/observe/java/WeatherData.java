@@ -10,44 +10,45 @@ import java.util.Observable;
  * @version: 1.0
  */
 public class WeatherData extends Observable {
-	private float temperature;
-	private float humidity;
-	private float pressure;
-	public void setMeasurements(float temperature,float humidity,float pressure){
-		this.temperature = temperature;
-		this.humidity = humidity;
-		this.pressure = pressure;
-		//通知观察者
-		mesurementsChanged();
-	}
+    private float temperature;
+    private float humidity;
+    private float pressure;
 
-	public void mesurementsChanged() {
-		setChanged();
-		notifyObservers();
-	}
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        //通知观察者
+        mesurementsChanged();
+    }
 
-	public float getTemperature() {
-		return temperature;
-	}
+    public void mesurementsChanged() {
+        setChanged();
+        notifyObservers();
+    }
 
-	public void setTemperature(float temperature) {
-		this.temperature = temperature;
-	}
+    public float getTemperature() {
+        return temperature;
+    }
 
-	public float getHumidity() {
-		return humidity;
-	}
+    public void setTemperature(float temperature) {
+        this.temperature = temperature;
+    }
 
-	public void setHumidity(float humidity) {
-		this.humidity = humidity;
-	}
+    public float getHumidity() {
+        return humidity;
+    }
 
-	public float getPressure() {
-		return pressure;
-	}
+    public void setHumidity(float humidity) {
+        this.humidity = humidity;
+    }
 
-	public void setPressure(float pressure) {
-		this.pressure = pressure;
-	}
+    public float getPressure() {
+        return pressure;
+    }
+
+    public void setPressure(float pressure) {
+        this.pressure = pressure;
+    }
 
 }

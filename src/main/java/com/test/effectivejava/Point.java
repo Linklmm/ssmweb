@@ -27,8 +27,8 @@ public class Point {
         return p.x == x && p.y == y;
     }
 
-    public boolean equals3(Object o){
-        if ( o == null||o.getClass()!=getClass())
+    public boolean equals3(Object o) {
+        if (o == null || o.getClass() != getClass())
             return false;
         Point p = (Point) o;
         return p.x == x && p.y == y;

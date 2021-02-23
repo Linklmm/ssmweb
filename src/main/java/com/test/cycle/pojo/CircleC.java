@@ -12,9 +12,10 @@ package com.test.cycle.pojo;
 public class CircleC {
     private CircleA circleA;
 
-    public void c(){
+    public void c() {
         circleA.a();
     }
+
     public CircleA getCircleA() {
         return circleA;
     }

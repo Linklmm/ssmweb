@@ -22,9 +22,9 @@ public class EnhancerDemo {
         enhancer.setCallback(new MethodInterceptor() {
             @Override
             public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-                System.out.println("before invoke "+method);
-                Object result = methodProxy.invokeSuper(o,objects);
-                System.err.println("after invoke "+method);
+                System.out.println("before invoke " + method);
+                Object result = methodProxy.invokeSuper(o, objects);
+                System.err.println("after invoke " + method);
                 return result;
             }
         });
@@ -35,7 +35,7 @@ public class EnhancerDemo {
         System.out.println(demo);
     }
 
-    public void test(){
+    public void test() {
         System.out.println("EnhancerDemo test()");
     }
 }

@@ -32,7 +32,7 @@ public class ObscenityRemovingBeanFactoryPostProcessor implements BeanFactoryPos
 
     public void setObscenties(Set<String> obscenties) {
         this.obscenties.clear();
-        for (String obscenity:obscenties) {
+        for (String obscenity : obscenties) {
             this.obscenties.add(obscenity.toUpperCase());
         }
     }
@@ -40,7 +40,7 @@ public class ObscenityRemovingBeanFactoryPostProcessor implements BeanFactoryPos
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         String[] beanNames = beanFactory.getBeanDefinitionNames();
-        for (String beanName: beanNames){
+        for (String beanName : beanNames) {
             BeanDefinition bd = beanFactory.getBeanDefinition(beanName);
             StringValueResolver valueResolver = new StringValueResolver() {
                 @Override
@@ -54,7 +54,7 @@ public class ObscenityRemovingBeanFactoryPostProcessor implements BeanFactoryPos
         }
     }
 
-    public boolean isObscene(Object value){
+    public boolean isObscene(Object value) {
         String potentialObscenity = value.toString().toUpperCase();
         return this.obscenties.contains(potentialObscenity);
     }

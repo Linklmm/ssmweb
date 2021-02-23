@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
  */
 public class ProxyTest {
     @Test
-    public void testProxy() throws Throwable{
+    public void testProxy() throws Throwable {
         //实例化目标对象
         UserService userService = new UserServiceImpl();
 

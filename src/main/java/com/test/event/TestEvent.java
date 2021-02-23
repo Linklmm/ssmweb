@@ -17,12 +17,13 @@ public class TestEvent extends ApplicationEvent {
     public TestEvent(Object source) {
         super(source);
     }
-    public TestEvent(Object source,String msg){
+
+    public TestEvent(Object source, String msg) {
         super(source);
         this.msg = msg;
     }
 
-    public void print(){
+    public void print() {
         System.out.println(msg);
     }
 }

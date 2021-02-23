@@ -16,7 +16,7 @@ public class Test {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("event/eventlistener.xml");
 
-        TestEvent event = new TestEvent("hello","msg");
+        TestEvent event = new TestEvent("hello", "msg");
         context.publishEvent(event);
     }
 }

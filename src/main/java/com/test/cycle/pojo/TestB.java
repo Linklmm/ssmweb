@@ -16,7 +16,7 @@ public class TestB {
         this.testC = testC;
     }
 
-    public void b(){
+    public void b() {
         testC.c();
     }
 }

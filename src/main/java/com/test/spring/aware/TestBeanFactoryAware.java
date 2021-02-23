@@ -17,13 +17,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class TestBeanFactoryAware implements BeanFactoryAware {
     private BeanFactory beanFactory;
+
     //声明bean的时候spring会自动注入beanfactory
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         System.out.println("调用了 BeanFactoryAware 的 setBeanFactory");
         this.beanFactory = beanFactory;
     }
-    public void testAware(){
+
+    public void testAware() {
         Hello hello = (Hello) beanFactory.getBean("hello");
         hello.say();
     }

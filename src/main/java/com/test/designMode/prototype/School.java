@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * Description 测试浅拷贝
+ *
  * @author playboy
  * @date 2020-06-17 08:24
  * version 1.0
@@ -15,6 +16,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class School {
-	private String name;
+    private String name;
 
 }

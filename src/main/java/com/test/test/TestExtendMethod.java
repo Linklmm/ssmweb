@@ -14,19 +14,20 @@ import com.test.test.pojo.ResponseA;
  * @createTime 2020年08月20日 15:29:00
  */
 public class TestExtendMethod {
-    private BaseResponse extendMethod(Base base){
+    private BaseResponse extendMethod(Base base) {
         System.out.println(JSON.toJSONString(base));
         System.out.println(base.getI());
-        if (base instanceof RequestA){
+        if (base instanceof RequestA) {
             ((RequestA) base).setName("23333");
         }
         return new BaseResponse();
     }
 
-    private void testOverload(BaseResponse br){
+    private void testOverload(BaseResponse br) {
         System.out.println("1");
     }
-    private void testOverload(ResponseA ba){
+
+    private void testOverload(ResponseA ba) {
         System.out.println("2");
     }
 
@@ -34,7 +35,7 @@ public class TestExtendMethod {
         TestExtendMethod tem = new TestExtendMethod();
         RequestA r = new RequestA();
         r.setName("lllll");
-        BaseResponse ra =tem.extendMethod(r);
+        BaseResponse ra = tem.extendMethod(r);
         System.out.println(JSON.toJSONString(r));
 //        ResponseA responseA = new ResponseA();
 //        BaseResponse baseResponse = new BaseResponse();

@@ -19,7 +19,7 @@ public class Test2 {
         List<Base> bases = Lists.newArrayList(base1, base2);
         Base arrayBase = bases.stream().findFirst().get();
         log.error("array:{}", JSON.toJSONString(bases));
-        log.error("findAndy:{}",JSON.toJSONString(bases.stream().findAny()));
+        log.error("findAndy:{}", JSON.toJSONString(bases.stream().findAny()));
         arrayBase.setI(111);
         log.error("array:{}", JSON.toJSONString(bases));
     }

@@ -10,10 +10,10 @@ import java.io.Reader;
 
 public class DBAccess {
     public SqlSession getSqlSession() throws IOException {
-        Reader reader=Resources.getResourceAsReader("classpath:mapping/UserMapper.xml");
+        Reader reader = Resources.getResourceAsReader("classpath:mapping/UserMapper.xml");
 
-        SqlSessionFactory sqlSessionFactory=new SqlSessionFactoryBuilder().build(reader);
-        SqlSession sqlSession=sqlSessionFactory.openSession();
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+        SqlSession sqlSession = sqlSessionFactory.openSession();
         return sqlSession;
     }
 }

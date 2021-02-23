@@ -15,12 +15,13 @@ import sun.misc.Cleaner;
 public class Room implements AutoCloseable {
 //    private static final Cleaner cleaner = Cleaner.create(new Room(),new State());
 
-    private static class State implements Runnable{
+    private static class State implements Runnable {
         int numJunkPiles;
 
-        State(int numJunkPiles){
+        State(int numJunkPiles) {
             this.numJunkPiles = numJunkPiles;
         }
+
         @Override
         public void run() {
             System.out.println("Cleaning room");
@@ -30,10 +31,11 @@ public class Room implements AutoCloseable {
 
     private final State state;
 
-//    private final Cleaner.Cleanable cleanable;
-    public Room(int numJunkPiles){
+    //    private final Cleaner.Cleanable cleanable;
+    public Room(int numJunkPiles) {
         state = new State(numJunkPiles);
     }
+
     @Override
     public void close() throws Exception {
     }

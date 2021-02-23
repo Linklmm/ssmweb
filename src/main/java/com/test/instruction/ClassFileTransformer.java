@@ -22,15 +22,15 @@ public class ClassFileTransformer implements java.lang.instrument.ClassFileTrans
                             Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer)
             throws IllegalClassFormatException {
         byte[] transformed = null;
-        System.out.println("Transforming "+className);
+        System.out.println("Transforming " + className);
         ClassPool pool = ClassPool.getDefault();
         CtClass cl = null;
         try {
             cl = pool.makeClass(new ByteArrayInputStream(classfileBuffer));
-            if (cl.isInterface() == false){
+            if (cl.isInterface() == false) {
                 CtBehavior[] methods = cl.getDeclaredBehaviors();
-                for (int i=0;i<methods.length;i++){
-                    if (methods[i].isEmpty() == false){
+                for (int i = 0; i < methods.length; i++) {
+                    if (methods[i].isEmpty() == false) {
                         //修改method字节码
                         doMethod(methods[i]);
                     }
@@ -40,7 +40,7 @@ public class ClassFileTransformer implements java.lang.instrument.ClassFileTrans
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (cl != null){
+            if (cl != null) {
                 cl.detach();
             }
         }
@@ -49,7 +49,7 @@ public class ClassFileTransformer implements java.lang.instrument.ClassFileTrans
 
 
     private void doMethod(CtBehavior method)
-            throws NotFoundException,CannotCompileException{
+            throws NotFoundException, CannotCompileException {
         method.insertBefore("long stime = System.nanoTime();");
 //        method.insertAfter("System.out.println(/ "leave "+method.getName()+" and time:/"
 //        +(System.nanoTime()-stime));");

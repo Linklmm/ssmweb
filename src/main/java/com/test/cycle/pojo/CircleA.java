@@ -12,7 +12,7 @@ package com.test.cycle.pojo;
 public class CircleA {
     private CircleB circleB;
 
-    public void a(){
+    public void a() {
         circleB.b();
     }
 

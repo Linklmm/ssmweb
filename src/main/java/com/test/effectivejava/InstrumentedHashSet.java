@@ -13,11 +13,11 @@ import java.util.Set;
 public class InstrumentedHashSet<E> extends HashSet<E> {
     private int addCount = 0;
 
-    public InstrumentedHashSet(){
+    public InstrumentedHashSet() {
     }
 
-    public InstrumentedHashSet(int initCap ,float loadFactor){
-        super(initCap,loadFactor);
+    public InstrumentedHashSet(int initCap, float loadFactor) {
+        super(initCap, loadFactor);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class InstrumentedHashSet<E> extends HashSet<E> {
 
     @Override
     public boolean addAll(Collection<? extends E> c) {
-        addCount+=c.size();
+        addCount += c.size();
         return super.addAll(c);
     }
 
@@ -39,12 +39,12 @@ public class InstrumentedHashSet<E> extends HashSet<E> {
     public static void main(String[] args) {
         InstrumentedHashSet<String> s = new InstrumentedHashSet<>();
         //通过addAll方法增加的每个元素都被计算了两次
-        s.addAll(Arrays.asList("snap","crackle","pop"));
+        s.addAll(Arrays.asList("snap", "crackle", "pop"));
         System.out.println(s.getAddCount());
 
         InstrumentedSet2<String> s2 = new InstrumentedSet2<>(s);
         //通过addAll方法增加的每个元素都被计算了两次
-        s2.addAll(Arrays.asList("snap2","crackle2","pop2"));
+        s2.addAll(Arrays.asList("snap2", "crackle2", "pop2"));
         System.out.println(s2.getAddCount());
         System.out.println(s2.toString());
     }

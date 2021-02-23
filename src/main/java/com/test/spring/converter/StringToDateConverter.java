@@ -1,4 +1,5 @@
 package com.test.spring.converter;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,7 +13,7 @@ import java.util.Date;
  * @Version 1.0
  * @Description spring的另外类型转换器，converter
  */
-public class StringToDateConverter implements org.springframework.core.convert.converter.Converter<String,Date> {
+public class StringToDateConverter implements org.springframework.core.convert.converter.Converter<String, Date> {
     @Override
     public Date convert(String s) {
         try {

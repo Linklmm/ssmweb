@@ -8,6 +8,6 @@ package com.test.designMode.observe;
  * @version: 1.0
  */
 public interface Observer {
-	public void update(float temp, float humidity, float pressure);
+    public void update(float temp, float humidity, float pressure);
 
 }

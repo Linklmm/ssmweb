@@ -60,11 +60,11 @@ public final class Complex {
 
     @Override
     public int hashCode() {
-        return 31*Double.hashCode(re)+Double.hashCode(im);
+        return 31 * Double.hashCode(re) + Double.hashCode(im);
     }
 
     @Override
     public String toString() {
-        return "("+re+"+"+im+"i)";
+        return "(" + re + "+" + im + "i)";
     }
 }

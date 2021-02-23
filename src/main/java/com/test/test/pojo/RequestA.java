@@ -10,6 +10,6 @@ import lombok.Data;
  * @createTime 2020年08月20日 15:25:00
  */
 @Data
-public class RequestA extends Base{
+public class RequestA extends Base {
     private String name;
 }

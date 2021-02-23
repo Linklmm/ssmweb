@@ -14,7 +14,7 @@ public class Msg {
 
     @Override
     public String toString() {
-        return "Msg:"+this.message;
+        return "Msg:" + this.message;
     }
 
     public String getMessage() {

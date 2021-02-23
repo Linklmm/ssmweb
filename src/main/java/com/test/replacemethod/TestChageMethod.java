@@ -13,7 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @Description replaced-method
  */
 public class TestChageMethod {
-    public void changeMe(){
+    public void changeMe() {
         System.out.println("changeMe");
     }
 
