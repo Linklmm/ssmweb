@@ -2,6 +2,7 @@ package com.test.algorithm.book;
 
 /**
  * 快速查找
+ * quick find
  *
  */
 public class QuickFind {
