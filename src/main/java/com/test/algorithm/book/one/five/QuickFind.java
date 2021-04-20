@@ -1,4 +1,4 @@
-package com.test.algorithm.book;
+package com.test.algorithm.book.one.five;
 
 /**
  * 快速查找

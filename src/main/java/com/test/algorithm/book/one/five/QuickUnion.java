@@ -1,24 +1,23 @@
-package com.test.algorithm.book;
+package com.test.algorithm.book.one.five;
 
 /**
- * 使用树的思想和加权的思想
- * 加权quick-union 快速合并集
+ * 使用树的思想
+ * quick uinion
  */
-public class QuickUnionImprovements {
+public class QuickUnion {
 
     private int[] array;
-    private int[] sz;
 
-    public QuickUnionImprovements(int n) {
+    public QuickUnion(int n) {
         array = new int[n];
         for (int i = 0; i < n; n++) {
             array[i] = i;
-            sz[i] = 1;
         }
     }
 
     /**
      * 查找根节点
+     * o(n)
      */
     public int root(int i) {
         while (array[i] != i) {
@@ -36,21 +35,16 @@ public class QuickUnionImprovements {
 
     /**
      * 连通两个节点
-     * 通过比较两个节点的权值，哪个权值大，哪个就为父节点
-     * 算法的时间复杂度为O(lgn)
+     * 让m的根节点变成n的根节点
+     * 解决了quick find 的union问题，但并不能保证在所有情况下它都能比quick-find算法快得多
+     * 2n+1
      */
     public void union(int m, int n) {
+        //o(n)
         int i = root(m);
+        //o(n)
         int j = root(n);
-        if (i == j) {
-            return;
-        }
-        if (sz[i] < sz[j]) {
-            array[i] = j;
-            sz[j] += sz[i];
-        } else {
-            array[j] = i;
-            sz[i] += sz[j];
-        }
+        //o(1)
+        array[i] = j;
     }
 }
