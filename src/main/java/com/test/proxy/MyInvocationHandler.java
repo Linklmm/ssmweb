@@ -18,9 +18,9 @@ public class MyInvocationHandler implements InvocationHandler {
     //目标对象
     private Object target;
 
-    public MyInvocationHandler(Object targer) {
+    public MyInvocationHandler(Object target) {
         super();
-        this.target = targer;
+        this.target = target;
     }
 
     /**

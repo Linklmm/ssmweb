@@ -17,4 +17,13 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+//    public int put(int item){
+//
+//    }
+
+//    public TreeNode listToTreeNode(List<Integer> valList) {
+//
+//    }
+
 }

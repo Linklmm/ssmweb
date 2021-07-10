@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import com.test.test.pojo.Base;
 import com.test.test.pojo.BaseResponse;
+import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -77,6 +78,16 @@ public class Test2 {
         LocalDateTime localDateTime1 = LocalDateTime.of(2021,6,11,14,0,0);
         System.out.println(localDateTime.toInstant(OffsetDateTime.now().getOffset()));
         System.out.println(localDateTime1.toInstant(OffsetDateTime.now().getOffset()));
+    }
+
+    @Test
+    public void testArrays(){
+        //这里只是得到一个list视图，所以无法进行删除等操作
+        List<Integer> list = Arrays.asList(1,2,3,4,5);
+        System.out.println(JSON.toJSONString(list));
+        //不支持删除操作
+        list.remove(1);
+        System.out.println(JSON.toJSONString(list));
     }
 
 }

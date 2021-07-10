@@ -3,6 +3,8 @@ package com.pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * Description 用户表
  *
@@ -11,7 +13,8 @@ import lombok.Data;
  * version 1.0
  */
 @Data
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 8247311827138861774L;
     private int id;
     private String name;
     private int age;

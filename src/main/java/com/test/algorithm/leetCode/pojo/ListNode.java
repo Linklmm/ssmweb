@@ -11,6 +11,7 @@ package com.test.algorithm.leetCode.pojo;
 public class ListNode {
     public int val;
     public ListNode next;
+    public ListNode head;
 
     public ListNode() {
     }
@@ -24,4 +25,10 @@ public class ListNode {
         this.next = next;
     }
 
+    public void push(int val){
+        ListNode oldNode = this.head;
+        ListNode newNode = new ListNode(val);
+        newNode.next = oldNode;
+        this.head = newNode;
+    }
 }
