@@ -257,11 +257,11 @@
 
         <!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
 <!--        这个版本序列化会有安全问题 -->
-<!--        <dependency>-->
-<!--            <groupId>commons-collections</groupId>-->
-<!--            <artifactId>commons-collections</artifactId>-->
-<!--            <version>3.1</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.1</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
         <dependency>
