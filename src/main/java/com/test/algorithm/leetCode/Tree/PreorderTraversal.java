@@ -22,12 +22,11 @@ public class PreorderTraversal {
    * @return
    */
   public List<Integer> preorderTraversal(TreeNode root) {
-    TreeNode head = root;
     List<Integer> result = new ArrayList<Integer>();
-    if (null != head) {
-      result.add(head.val);
+    if (null != root) {
+      result.add(root.val);
       List<Integer> lefts = preorderTraversal(root.left);
-      List<Integer> rights = preorderTraversal(head.right);
+      List<Integer> rights = preorderTraversal(root.right);
       result.addAll(lefts);
       result.addAll(rights);
     }
