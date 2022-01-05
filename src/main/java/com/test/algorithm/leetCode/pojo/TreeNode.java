@@ -1,11 +1,8 @@
 package com.test.algorithm.leetCode.pojo;
 
-import apple.laf.JRSUIUtils.Tree;
-import com.test.algorithm.leetCode.utils.TreeUtils;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.springframework.util.CollectionUtils;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class TreeNode {
 
@@ -34,44 +31,32 @@ public class TreeNode {
     if (0 == valArray.length) {
       return null;
     }
-    List<Integer> valList = new ArrayList<>();
-    Arrays.stream(valArray).forEach(valList::add);
-    TreeNode root = new TreeNode(valList.get(0));
-    valList.remove(0);
-    toTreeNode(valList, root);
-    while (!CollectionUtils.isEmpty(valList)) {
-      toTreeNode(valList, root.left);
-      toTreeNode(valList, root.right);
-    }
-    return toTreeNode(valList, root);
+    AtomicReference<TreeNode> root = new AtomicReference<>();
+    Arrays.stream(valArray).forEach(value ->
+        root.set(putItem(value, root.get())));
+    return root.get();
   }
 
-  public TreeNode toTreeNode(List<Integer> valList, TreeNode root) {
-    if (CollectionUtils.isEmpty(valList)) {
-      return null;
+  public TreeNode putItem(Integer val, TreeNode root) {
+    if (Objects.isNull(root)) {
+      root = new TreeNode(val);
+    } else if (Objects.isNull(root.left)) {
+      root.left = new TreeNode(val);
+    } else if (Objects.isNull(root.right)) {
+      root.right = new TreeNode(val);
+    } else {
+      //都有值，下个节点
+      if (Objects.isNull(root.left.left) || Objects.isNull(root.left.right)) {
+        putItem(val, root.left);
+        return root;
+      }
+      if (Objects.isNull(root.right.left) || Objects.isNull(root.right.right)) {
+        putItem(val, root.right);
+        return root;
+      }
     }
-    setLeft(valList, root);
-    if (CollectionUtils.isEmpty(valList)) {
-      return root;
-    }
-    setRight(valList, root);
-    if (!CollectionUtils.isEmpty(valList)){
-      toTreeNode(valList,root.left);
-      toTreeNode(valList,root.right);
-    }
+
     return root;
-  }
-
-  private void setRight(List<Integer> valList, TreeNode root) {
-    TreeNode right = new TreeNode(valList.get(0));
-    valList.remove(0);
-    root.right = right;
-  }
-
-  private void setLeft(List<Integer> valList, TreeNode root) {
-    TreeNode left = new TreeNode(valList.get(0));
-    valList.remove(0);
-    root.left = left;
   }
 
 }
