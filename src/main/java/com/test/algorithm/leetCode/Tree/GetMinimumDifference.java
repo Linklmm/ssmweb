@@ -2,6 +2,7 @@ package com.test.algorithm.leetCode.Tree;
 
 import com.alibaba.fastjson.JSON;
 import com.test.algorithm.leetCode.pojo.TreeNode;
+import com.test.algorithm.leetCode.utils.TreeUtils;
 import java.util.Objects;
 
 /**
@@ -55,7 +56,7 @@ public class GetMinimumDifference {
 
     TreeNode treeNode = new TreeNode();
     int[] val = new int[]{4, 2, 6, 1, 3,0,1};
-    treeNode = treeNode.listToTreeNode(val);
+    treeNode = TreeUtils.listToTreeNode(val);
     System.out.println(JSON.toJSONString(treeNode));
   }
 

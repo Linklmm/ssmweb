@@ -1,11 +1,11 @@
 package com.test.algorithm.leetCode.utils;
 
+import com.alibaba.fastjson.JSON;
 import com.test.algorithm.leetCode.pojo.TreeNode;
-import lombok.extern.slf4j.Slf4j;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @program: ssmweb
@@ -15,48 +15,43 @@ import java.util.List;
  **/
 @Slf4j
 public class TreeUtils {
-    /**
-     * 数组转二叉树
-     *
-     * @param list
-     * @return 二叉树
-     */
-    public static TreeNode arraysToBinaryTree(List<Integer> list) {
-        if (null == list || list.size() == 0) {
-            return null;
-        }
-        //得到树的深度
-        int depth = getTreeDepth(list);
-        TreeNode root = new TreeNode(list.get(0));
-        return null;
+
+  public static TreeNode listToTreeNode(int[] valArray) {
+    if (0 == valArray.length) {
+      return null;
+    }
+    AtomicReference<TreeNode> root = new AtomicReference<>();
+    Arrays.stream(valArray).forEach(value -> {
+      root.set(putItem(value, root.get()));
+    });
+    return root.get();
+  }
+
+  public static TreeNode putItem(Integer val, TreeNode root) {
+    if (Objects.isNull(root)) {
+      root = new TreeNode(val);
+    } else if (Objects.isNull(root.left)) {
+      root.left = new TreeNode(val);
+    } else if (Objects.isNull(root.right)) {
+      root.right = new TreeNode(val);
+    } else {
+      //都有值，下个节点
+      if (Objects.isNull(root.left.left) || Objects.isNull(root.left.right)) {
+        putItem(val, root.left);
+        return root;
+      }
+      if (Objects.isNull(root.right.left) || Objects.isNull(root.right.right)) {
+        putItem(val, root.right);
+        return root;
+      }
     }
 
+    return root;
+  }
 
-    /**
-     * 得到数组转换为二叉树的深度
-     *
-     * @param list
-     * @return
-     */
-    private static int getTreeDepth(List<Integer> list) {
-        int size = list.size() + 1;
-        int depthNum = 0;
-        if (1 == list.size()) {
-            return 1;
-        }
-        while (0 != size / 2 || 0 != size % 2) {
-            int remainder = size % 2;
-            size = size / 2 + remainder;
-            depthNum++;
-            if (1 == size && 0 == remainder) {
-                return depthNum;
-            }
-        }
-        return depthNum;
-    }
-
-    public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(1, 2, 3, 0, 0, 1, 1, 1);
-        log.error("tree depth is {}", getTreeDepth(list));
-    }
+  public static void main(String[] args) {
+    log.error("tree depth is {}",
+        JSON.toJSONString(
+            TreeUtils.listToTreeNode(new int[]{1, 2, 3, 0, 0, 1, 1, 1})));
+  }
 }
