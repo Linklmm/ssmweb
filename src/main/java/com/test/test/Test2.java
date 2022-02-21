@@ -102,4 +102,9 @@ public class Test2 {
 
   }
 
+  @Test
+  public void testHashCode() {
+    log.error("hashCode:{}", "abc".hashCode());
+  }
+
 }
