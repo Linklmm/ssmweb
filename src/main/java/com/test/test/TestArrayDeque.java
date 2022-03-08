@@ -2,7 +2,11 @@ package com.test.test;
 
 import com.test.test.pojo.TestDelayed;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Deque;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
@@ -53,9 +57,68 @@ public class TestArrayDeque {
     delayQueue.offer(new TestDelayed("ccc", 1, TimeUnit.SECONDS));
     delayQueue.offer(new TestDelayed("bbb", 3, TimeUnit.SECONDS));
 
-    log.info(((TestDelayed) delayQueue.take()).getStr());
-    log.info(((TestDelayed) delayQueue.take()).getStr());
-    log.info(((TestDelayed) delayQueue.take()).getStr());
+    log.info((delayQueue.take()).getStr());
+    log.info((delayQueue.take()).getStr());
+    log.info((delayQueue.take()).getStr());
+  }
+
+  @Test
+  public void testCollections() {
+
+    List<String> list = new ArrayList<String>();
+    list.add("1");
+    list.add("2");
+    list.add("3");
+    list.add("4");
+    list.add("5");
+    list.add("6");
+    list.add("7");
+    list.add("8");
+    int idx = Collections.binarySearch(list, "5");
+    log.error("idx:{}", idx);
+  }
+
+  /**
+   * 洗牌算法
+   */
+  @Test
+  public void testShuffle() {
+    List<String> list = new ArrayList<String>();
+    list.add("1");
+    list.add("2");
+    list.add("3");
+    list.add("4");
+    list.add("5");
+    list.add("6");
+    list.add("7");
+    list.add("8");
+
+    Random random = new Random();
+    for (int i = list.size(); i > 1; i--) {
+      int ri = random.nextInt(i);  // 随机位置
+      int ji = i - 1;              // 顺延
+      //System.out.println("ri：" + ri + " ji：" + ji);
+      log.error("ri:{},ji:{}", ri, ji);
+      list.set(ji, list.set(ri, list.get(ji)));        // 元素置换
+    }
+    log.error("list:{}", list);
+
+  }
+
+  /**
+   * 旋转算法，可以把ArrayList或者Linkedlist，从指定的某个位置开始，进行正旋或者逆旋操作。
+   * 有点像把集合理解成圆盘，把要的元素转到自己这，其他的元素顺序跟随。
+   */
+  @Test
+  public void testRotate() {
+    List<String> list = new ArrayList<String>();
+    list.add("7");
+    list.add("4");
+    list.add("8");
+    list.add("3");
+    list.add("9");
+    Collections.rotate(list, 2);
+    log.error("list:{}", list);
   }
 
 }
