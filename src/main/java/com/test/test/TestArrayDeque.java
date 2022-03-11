@@ -1,6 +1,8 @@
 package com.test.test;
 
 import com.test.test.pojo.TestDelayed;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -106,8 +108,7 @@ public class TestArrayDeque {
   }
 
   /**
-   * 旋转算法，可以把ArrayList或者Linkedlist，从指定的某个位置开始，进行正旋或者逆旋操作。
-   * 有点像把集合理解成圆盘，把要的元素转到自己这，其他的元素顺序跟随。
+   * 旋转算法，可以把ArrayList或者Linkedlist，从指定的某个位置开始，进行正旋或者逆旋操作。 有点像把集合理解成圆盘，把要的元素转到自己这，其他的元素顺序跟随。
    */
   @Test
   public void testRotate() {
@@ -119,6 +120,51 @@ public class TestArrayDeque {
     list.add("9");
     Collections.rotate(list, 2);
     log.error("list:{}", list);
+  }
+
+  /**
+   * 测试sb和string的速度
+   */
+  @Test
+  public void testString() {
+    Instant start = Instant.now();
+    String s = "";
+    for (int i = 0; i < 100000; i++) {
+      s += i;
+    }
+    log.error("time:{}", Duration.between(Instant.now(), start).toMillis());
+
+    Instant sStart = Instant.now();
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < 100000; i++) {
+      sb.append(i);
+    }
+    log.error("sb time:{}", Duration.between(Instant.now(), sStart).toMillis());
+
+    Instant sbStart = Instant.now();
+    StringBuffer sb2 = new StringBuffer();
+    for (int i = 0; i < 100000; i++) {
+      sb2.append(i);
+    }
+    log.error("sb2 time:{}", Duration.between(Instant.now(), sbStart).toMillis());
+  }
+
+  @Test
+  public void testStr() {
+    String str = new String("ab");
+    String str2 = new String("ab");
+    String str3 = "ab";
+
+    //false 两个对象的比较
+    log.error("str == str2 :{}", str == str2);
+    //false 相当于 str == str3
+    log.error("str == str2.intern():{}", str == str2.intern());
+    //true intern是吧值直接推进了常量池，得到的是常量池的值
+    log.error("str.intern() == str2.intern():{}", str.intern() == str2.intern());
+    //false 这里比对的是引用地址，因为str是new出来的对象，是个新的引用地址，str3不会重新创建对象，是直接指向运行时常量池的，所以两者不等
+    log.error("str == str3:{}", str == str3);
+    //true intern是吧值直接推进了常量池，得到的是常量池的值，str3是常量池中的值，固两者相等。
+    log.error("str.intern() == str3:{}", str.intern() == str3);
   }
 
 }
