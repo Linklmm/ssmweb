@@ -3,6 +3,7 @@ package com.test.design.cor.design;
 import com.test.design.cor.pojo.AuthInfo;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -26,14 +27,21 @@ public abstract class AuthLink {
 
   /**
    * 获取下一个链路
+   *
    * @return
    */
   public AuthLink next() {
+    if (Objects.nonNull(next)) {
+      log.error("当前类：{},下一个类：{}", this.getClass().getSimpleName(), next.getClass().getSimpleName());
+    }else {
+      log.error("最后一个类:{}",this.getClass().getSimpleName());
+    }
     return next;
   }
 
   /**
    * 增加链路
+   *
    * @param next
    * @return
    */
@@ -43,8 +51,8 @@ public abstract class AuthLink {
   }
 
   /**
-   * 是否审核
-   * 查询审核结果
+   * 是否审核 查询审核结果
+   *
    * @param uId
    * @param orderId
    * @param authDate

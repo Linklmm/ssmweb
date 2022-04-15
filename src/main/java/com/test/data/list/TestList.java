@@ -19,6 +19,7 @@ import org.junit.jupiter.api.Test;
 public class TestList {
 
   private static List<Integer> iteratorLinkedList = new LinkedList();
+  private static List<Integer> arrayList = new ArrayList<>(15000000);
   private int xx = 0;
 
   /**
@@ -65,8 +66,8 @@ public class TestList {
 
   @BeforeAll
   public static void init() {
-    for (int i = 0; i < 1000000; i++) {
-      iteratorLinkedList.add(i);
+    for (int i = 0; i < 10000000; i++) {
+      arrayList.add(i);
     }
   }
 

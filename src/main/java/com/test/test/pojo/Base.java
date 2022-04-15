@@ -1,7 +1,6 @@
 package com.test.test.pojo;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,7 +17,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Base {
-    private int i;
-    private int j;
-    private Boolean b = Boolean.FALSE;
+
+  private Integer i;
+  private Integer j;
+  private Boolean b = Boolean.FALSE;
 }
