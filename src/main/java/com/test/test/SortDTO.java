@@ -3,12 +3,14 @@ package com.test.test;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.ImmutableList;
+import com.test.test.pojo.SortEntity;
 import com.test.test.pojo.User;
 
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
