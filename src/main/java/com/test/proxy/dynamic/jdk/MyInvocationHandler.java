@@ -23,6 +23,7 @@ public class MyInvocationHandler implements InvocationHandler {
         this.target = target;
     }
 
+    //可以使用匿名内部类的方式实现
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("-------before " + JSON.toJSONString(method.getParameterTypes()) + "-----------");

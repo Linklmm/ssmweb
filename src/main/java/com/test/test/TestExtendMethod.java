@@ -37,9 +37,9 @@ public class TestExtendMethod {
         r.setName("lllll");
         BaseResponse ra = tem.extendMethod(r);
         System.out.println(JSON.toJSONString(r));
-//        ResponseA responseA = new ResponseA();
-//        BaseResponse baseResponse = new BaseResponse();
-//        tem.testOverload(responseA);
-//        tem.testOverload(baseResponse);
+        ResponseA responseA = new ResponseA();
+        BaseResponse baseResponse = new BaseResponse();
+        tem.testOverload(responseA);
+        tem.testOverload(baseResponse);
     }
 }

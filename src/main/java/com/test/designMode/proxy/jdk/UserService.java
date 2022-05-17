@@ -8,4 +8,6 @@ package com.test.designMode.proxy.jdk;
  **/
 public interface UserService {
     public void add();
+
+    void test();
 }
